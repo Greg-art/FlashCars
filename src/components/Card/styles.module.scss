@@ -11,11 +11,11 @@
   transform-style: preserve-3d;
 
   &.back {
-    animation: flip .275s forwards linear;
+    animation: unflip .275s forwards linear;
   }
 
   &.front {
-    animation: unflip .275s forwards linear;
+    animation: flip .275s forwards linear;
   }
 
 }

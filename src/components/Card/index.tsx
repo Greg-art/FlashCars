@@ -1,29 +1,28 @@
-import Lado from "./Lado";
+import BackCard from "./Sides/BackCard";
+import FrontCard from "./Sides/FrontCard";
 import styles from './styles.module.scss'
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CardContext } from "../../contexts/CardContext";
 
-export default function Card(){
-  const [ turnCard, setTurnCard ]  = useState(false)
+interface CardProps{
+  question: string,
+  anwser: string,
+}
 
-  const textA = 'Qual nome do osso do braço que parece com o nome de uma tecnologia de transimissão de audio?'
-  const textB = 'Radio é o nome do bixo'
-
-
-  function handleClick() { 
-    setTurnCard(!turnCard); 
-  } 
-
+export default function Card( { question, anwser }: CardProps){
+  const { isCardTurned } = useContext(CardContext)
+  
   return(
     <>
-    <div className={styles.flipCard} onClick={handleClick}>
+    <div className={styles.flipCard} >
       {/* <div className={ cn(turnCard ? styles.flipCardInner : '', styles) } */}
-      <div className={`${styles.flipCardInner} ${turnCard ? styles.back : styles.front}`}
+      <div className={`${styles.flipCardInner} ${isCardTurned ? styles.back : styles.front}`}
       >
-        <div className={styles.frontCard}>
-          <Lado text={textA} isFront={true} /> 
+        <div className={styles.frontCard} >
+          <FrontCard text={question} isFront={true}/> 
         </div>
-        <div className={styles.backCard}>
-          <Lado text={textB} isFront={false} />
+        <div className={styles.backCard} >
+          <BackCard text={anwser} isFront={false}/>
         </div>        
       </div>
     </div>

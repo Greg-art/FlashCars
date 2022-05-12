@@ -1,6 +1,7 @@
 import { Box, Stack, Text } from "@chakra-ui/react";
-import BackBottom from "./CardBottom/BackBottom";
-import FrontBottom from "./CardBottom/frontBottom";
+import { useContext } from "react";
+import { CardContext } from "../../../contexts/CardContext";
+import { TextButton } from "../../TextButton";
 
 // https://www.w3schools.com/howto/howto_css_flip_card.asp
 
@@ -9,8 +10,8 @@ interface LadoProps {
   isFront?: boolean; 
 }
 
-export default function Lado( { text, isFront = true }: LadoProps){
-  
+export default function FrontCard( { text, isFront = true }: LadoProps){
+  const { HandleTurnCard } = useContext(CardContext)
 
   return(
     <Box>
@@ -28,11 +29,8 @@ export default function Lado( { text, isFront = true }: LadoProps){
           lineHeight='200%'
           color='gray.800'
         >{text}</Text>
-        <a color='black.500' >
-
-          { isFront && <FrontBottom />}
-          { !isFront && <BackBottom />}
-          
+        <a color='black.500' onClick={HandleTurnCard}>
+          <TextButton color='black.500' text='Virar'/>          
         </a>
       </Stack> 
       
