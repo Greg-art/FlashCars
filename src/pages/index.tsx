@@ -4,20 +4,21 @@ import ComboBox from "../components/ComboBox";
 import { FiArrowRight } from "react-icons/fi";
 import Card from "../components/Card";
 import { useContext, useEffect } from "react";
-import { api } from "../../services/api";
+import { api } from "../services/api";
 import { CardContext } from "../contexts/CardContext";
 
 
 export default function Home(){
   const { setCards, cards, cardIndex } = useContext(CardContext)
 
-  useEffect(() =>{
-    api.get('cards').then(response => {
-      console.log(response.data)
-      setCards(response.data)
-    });
-  },[])
-  console.log(JSON.stringify(cards))
+
+
+  // fs.writeFile('./duos.json', JSON.stringify(server, null, 2), 'utf-8', (error) => {
+  //   if(error){
+  //     console.log(error)
+  //     return;
+  //   }
+  // })
 
   return (
     <>

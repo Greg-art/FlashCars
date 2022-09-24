@@ -17,8 +17,9 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'black.500',
-        color: 'gray.50'
+        bg: 'gray.900',
+        color: 'gray.50',
+        overflow:'hidden'
       },
       Option: {
         bg: 'black'

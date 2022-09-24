@@ -10,13 +10,14 @@
   position: relative;
   transform-style: preserve-3d;
 
-  &.back {
-    animation: unflip .275s forwards linear;
+  &.front {
+    animation: draw .275s forwards linear;
   }
 
-  &.front {
+  &.back {
     animation: flip .275s forwards linear;
   }
+
 
 }
 
@@ -33,19 +34,19 @@
 }
 
 
-@keyframes flip {
+@keyframes draw {
   0% {
-    transform: rotateZ(0deg) rotateY(180deg);
+    transform: translateX(-300px) rotateZ(0deg) rotateY(90deg);
   } 
   50% {
-    transform: rotateZ(-10deg) rotateY(90deg);
+    transform: translateX(-100px) rotateZ(-10deg) rotateY(45deg);
   }
-  100% {
-    transform: rotateZ(0deg) rotateY(0deg);
+  100% {    
+    transform: translateX(0px) rotateZ(0deg) rotateY(0deg);
   }
 }
 
-@keyframes unflip {
+@keyframes flip {
   0% {
     transform: rotateZ(0deg) rotateY(0deg);
   } 
