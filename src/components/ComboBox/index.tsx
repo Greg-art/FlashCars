@@ -4,15 +4,33 @@ import { FiChevronDown, FiEdit2, FiPlus } from "react-icons/fi";
 
 import subjects from '../../../subjects.json'
 import fs from 'fs'
-import { useEffect, useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 
 export default function ComboBox(){
   const [ chosenSubject, setChosenSubject ] = useState(0)
   const [ showComboBox, setShowComboBox ] = useState(false)
 
+    const BoxRef = useRef(null);
+
+    const handleKeyDown = (event: MouseEvent) => {
+      const box2 = BoxRef.current
+      
+        if (!box2.contains(event.target)) {
+          setShowComboBox(false)
+        }        
+    };
+  
+    useEffect(() => {
+      window.addEventListener('click', e => handleKeyDown(e));
+  
+      // cleanup this component
+      return () => {
+        window.removeEventListener('click',  e => handleKeyDown(e));
+      };
+    }, []);
 
   return(
-    <Flex id='ComboBox' flexDir='column' gap='10px' >
+    <Flex className='ComboBox' ref={BoxRef} flexDir='column' gap='10px' >
       <Flex         
         pos='relative'
         w='150px' 
