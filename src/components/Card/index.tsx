@@ -1,15 +1,15 @@
-import BackCard from "./Sides/BackCard";
-import FrontCard from "./Sides/FrontCard";
+import AnswerSide from "./Sides/AnswerSide";
+import QuestionSide from "./Sides/QuestionSide";
 import styles from './styles.module.scss'
 import { useContext, useState } from "react";
 import { CardContext } from "../../contexts/CardContext";
 
 interface CardProps{
   question: string,
-  anwser: string,
+  Answer: string,
 }
 
-export default function Card( { question, anwser }: CardProps){
+export default function Card( { question, Answer }: CardProps){
   const { isCardTurned } = useContext(CardContext)
   
   return(
@@ -18,11 +18,11 @@ export default function Card( { question, anwser }: CardProps){
       {/* <div className={ cn(turnCard ? styles.flipCardInner : '', styles) } */}
       <div className={`${styles.flipCardInner} ${isCardTurned ? styles.back : styles.front}`}
       >
-        <div className={styles.frontCard} >
-          <FrontCard text={question} isFront={true}/> 
+        <div className={styles.QuestionSide} >
+          <QuestionSide text={question} isFront={true}/> 
         </div>
-        <div className={styles.backCard} >
-          <BackCard text={anwser} isFront={false}/>
+        <div className={styles.AnswerSide} >
+          <AnswerSide text={Answer} isFront={false}/>
         </div>        
       </div>
     </div>

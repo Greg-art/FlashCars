@@ -10,7 +10,7 @@ interface LadoProps {
   isFront?: boolean; 
 }
 
-export default function BackCard( { text, isFront = true }: LadoProps){
+export default function AnswerSide( { text, isFront = true }: LadoProps){
   const { HandleTurnCard, HandleAddCardIndex } = useContext(CardContext)
 
   function handleChooseDificulty() {

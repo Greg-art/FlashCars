@@ -10,7 +10,7 @@ interface LadoProps {
   isFront?: boolean; 
 }
 
-export default function FrontCard( { text, isFront = true }: LadoProps){
+export default function QuestionSide( { text, isFront = true }: LadoProps){
   const { HandleTurnCard } = useContext(CardContext)
 
   return(

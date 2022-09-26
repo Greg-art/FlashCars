@@ -29,7 +29,7 @@ export default function Home(){
 
       <Flex w='100vw' h='800px' align='center' justify='center'>
         { cards && (
-          <Card question={cards[cardIndex].question} anwser={cards[cardIndex].answer}/>
+          <Card question={cards[cardIndex].question} Answer={cards[cardIndex].answer}/>
         )}
       </Flex>
 

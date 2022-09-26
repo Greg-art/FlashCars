@@ -54,7 +54,7 @@ export default function DropDown({ subjects }:DropDownProps){
   useEffect(() => {
     // function setContext() {
       // if que determina se este é o ultimo dropdown
-      if(!chosenSubject.title || !chosenSubject.subjects) {
+      if(chosenSubject.questions ) {
         setCards(chosenSubject.questions)
       }
     // }
