@@ -2,13 +2,26 @@ import { Box, Flex, Select, Text } from "@chakra-ui/react";
 import styles from './styles.module.scss'
 import { FiChevronDown, FiEdit2, FiPlus } from "react-icons/fi";
 
-import subjects from '../../../subjects.json'
 import fs from 'fs'
 import { createRef, useEffect, useRef, useState } from "react";
 
-export default function ComboBox(){
+type Subject ={
+  id: number;
+  title: string;
+  questions: {
+      id: number;
+      question: string;
+      answer: string;
+  }[];
+}[]
+
+interface DropDownProps{
+  subjects: Subject
+}
+
+export default function DropDown({ subjects }:DropDownProps){
   const [ chosenSubject, setChosenSubject ] = useState(0)
-  const [ showComboBox, setShowComboBox ] = useState(false)
+  const [ showDropDown, setShowDropDown ] = useState(false)
 
     const BoxRef = useRef(null);
 
@@ -16,7 +29,7 @@ export default function ComboBox(){
       const box2 = BoxRef.current
       
         if (!box2.contains(event.target)) {
-          setShowComboBox(false)
+          setShowDropDown(false)
         }        
     };
   
@@ -25,12 +38,12 @@ export default function ComboBox(){
   
       // cleanup this component
       return () => {
-        window.removeEventListener('click',  e => handleKeyDown(e));
+        window.removeEventListener('click', e => handleKeyDown(e));
       };
     }, []);
 
   return(
-    <Flex className='ComboBox' ref={BoxRef} flexDir='column' gap='10px' >
+    <Flex className='DropDown' ref={BoxRef} flexDir='column' gap='10px' >
       <Flex         
         pos='relative'
         w='150px' 
@@ -40,26 +53,26 @@ export default function ComboBox(){
         justify='space-between'
         transition='0.2s'
         opacity='0.8'
-        onClick={() => setShowComboBox(!showComboBox)}
+        onClick={() => setShowDropDown(!showDropDown)}
         _hover={{
           opacity: 1,
           cursor: 'pointer'
         }}
       >
-        <Text ml='20px' color='gray.200'>Tudo</Text>
+      <Text ml='20px' color='gray.200'>Tudo</Text>
         <Flex right='10px' align='center' mr='10px'>
           <Box bg='gray.600' h='20px' w='1px' mr='8px'/>
           <FiChevronDown color='gray'/>
         </Flex>
       </Flex>
 
-      { showComboBox &&
+      { showDropDown &&
         <Flex 
           minH='200px'
           w='150px' 
           bg='gray.700' 
           position='absolute' 
-          top='50px'
+          top='45px'
           flexDir='column'
           pt='5px'
           pb='5px'
@@ -75,18 +88,14 @@ export default function ComboBox(){
                 cursor: 'pointer'
               }}
             >
-              <Text                 
-                py='5px' 
-                pl='10px'
-                w='100%'
-              >
+              <Text py='5px' pl='10px' w='100%'>
                 {subject.title}
               </Text>
               <Flex 
+                py='8px'
                 px='10px'
-                _hover={{ bg:'gray.500' }}
-                h='100%'
                 align='center'
+                _hover={{ bg:'gray.500' }}
               >
                 <FiEdit2 />
               </Flex>

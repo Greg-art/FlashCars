@@ -1,11 +1,11 @@
 
 import { Stack, Box, Text, Flex, Button } from "@chakra-ui/react";
-import ComboBox from "../components/ComboBox";
 import { FiArrowRight } from "react-icons/fi";
 import Card from "../components/Card";
 import { useContext, useEffect } from "react";
 import { api } from "../services/api";
 import { CardContext } from "../contexts/CardContext";
+import { CardFilter } from "../components/CardFilter";
 
 
 export default function Home(){
@@ -32,7 +32,7 @@ export default function Home(){
         >
           <Text fontSize='lg' fontWeight='light'>Subject:</Text>
 
-          <ComboBox /> <FiArrowRight/> <ComboBox />
+          <CardFilter />
 
         </Stack>  
       </header>
