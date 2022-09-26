@@ -14,7 +14,7 @@ type CardContextData = {
   HandleTurnCard: () => void;
   isCardTurned: boolean;
   cards: CardType[] | null;
-  setCards: (cards: CardType[]) => void;
+  HandleSetCards: (cards: CardType[]) => void;
   HandleAddCardIndex: () => void;
   cardIndex: number;
 }
@@ -32,10 +32,18 @@ export function CardContextProvider({ children }: CardContextProviderProps){
 
   function HandleTurnCard(){
     setIsCardTurned(!isCardTurned)
+  }  
+  
+  function HandleSetCards(cards: CardType[]){
+    setCards(cards)
+    setCardIndex(0)
+    setIsCardTurned(false)
   }
 
+
+
   return(
-    <CardContext.Provider value={{cardIndex, HandleAddCardIndex, setCards, cards, HandleTurnCard, isCardTurned}}>
+    <CardContext.Provider value={{cardIndex, HandleAddCardIndex, HandleSetCards, cards, HandleTurnCard, isCardTurned}}>
       {children}
     </CardContext.Provider>
   )

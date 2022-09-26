@@ -37,9 +37,9 @@ export default function AnswerSide( { text, isFront = true }: LadoProps){
         <a color='black.500' onClick={handleChooseDificulty}>
 
           <Stack direction='row' spacing={5}>
-            <TextButton color='green.600' text='Easy'/>
-            <TextButton color='yellow.600' text='Medium'/>
-            <TextButton color='red.700' text='Hard'/>
+            <TextButton color='green.500' text='Fácil'/>
+            <TextButton color='yellow.500' text='Médio'/>
+            <TextButton color='red.500' text='Difícil'/>
           </Stack>          
         </a>
       </Stack> 

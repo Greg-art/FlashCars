@@ -8,12 +8,17 @@ interface TextButtonProps {
 export function TextButton( {color, text}: TextButtonProps ){
   return(
     <Text
-      color={color}
+      color='Black'
+      p='10px 20px'
+      borderRadius='10px'
+      bg={color}
       fontWeight='bold'
       fontSize='xl'
+      transition= '.2s'
       _hover={{
-        color: 'black.100',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        // opacity: '0.8',
+        boxShadow: ' inset 5px 5px 20px -2px  rgba(0, 0, 0, 0.3)'
       }}
     >          
       {text}

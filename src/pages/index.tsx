@@ -7,7 +7,7 @@ import { CardFilter } from "../components/CardFilter";
 
 
 export default function Home(){
-  const { setCards, cards, cardIndex } = useContext(CardContext)
+  const { cards, cardIndex } = useContext(CardContext)
 
   useEffect(() => {
     console.log(cards)

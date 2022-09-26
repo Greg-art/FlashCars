@@ -25,7 +25,7 @@ interface DropDownProps{
 export default function DropDown({ subjects }:DropDownProps){
   const [ chosenSubject, setChosenSubject ] = useState<Subject>({} as Subject)
   const [ showDropDown, setShowDropDown ] = useState(false)
-  const { setCards, cards } = useContext(CardContext)
+  const { HandleSetCards, cards } = useContext(CardContext)
 
   const BoxRef = useRef(null);
 
@@ -55,7 +55,7 @@ export default function DropDown({ subjects }:DropDownProps){
     // function setContext() {
       // if que determina se este é o ultimo dropdown
       if(chosenSubject.questions ) {
-        setCards(chosenSubject.questions)
+        HandleSetCards(chosenSubject.questions)
       }
     // }
   }, [chosenSubject])

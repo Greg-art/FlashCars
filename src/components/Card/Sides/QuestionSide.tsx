@@ -30,7 +30,7 @@ export default function QuestionSide( { text, isFront = true }: LadoProps){
           color='gray.800'
         >{text}</Text>
         <a color='black.500' onClick={HandleTurnCard}>
-          <TextButton color='black.500' text='Virar'/>          
+          <TextButton color='transparent' text='Virar'/>          
         </a>
       </Stack> 
       
