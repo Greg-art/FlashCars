@@ -5,9 +5,9 @@ interface CardContextProviderProps {
 }
 
 type CardType = {
-  id: number,
-  front: string,
-  back: string
+  id: number;
+  question: string;
+  answer: string;
 }
 
 type CardContextData = {

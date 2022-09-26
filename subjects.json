@@ -33,6 +33,34 @@
       { "id": 4, "question": "4- Quantos X pra trocar 1 lâmpada", "answer": "4- depende" },
       { "id": 5, "question": "5- Era ____ vez", "answer": "5- 'uma'" },
       { "id": 6, "question": "6- 2x2", "answer": "6- 4" }
+    ],
+    "subjects": [
+      { 
+        "id": 3,
+        "title": "Geopolítica",
+        "questions": [
+          { "id": 1, "question": "1- Qual o presidente dos EUA?", "answer": "1- Biden" },
+          { "id": 2, "question": "2- Qual a formula da água?", "answer": "2- H2O" },
+          { "id": 3, "question": "3- Qual teu nome?", "answer": "3- Greg" },
+          { "id": 4, "question": "4- Quantos X pra trocar 1 lâmpada", "answer": "4- depende" },
+          { "id": 5, "question": "5- Era ____ vez", "answer": "5- 'uma'" },
+          { "id": 6, "question": "6- 2x2", "answer": "6- 4" }
+        ],
+        "subjects": [
+          { 
+            "id": 3,
+            "title": "Brasil",
+            "questions": [
+              { "id": 1, "question": "1- Quem foi o primeiro presidente do Brasil?", "answer": "1- Deodoro da Fonseca" },
+              { "id": 2, "question": "2- Qual a formula da água?", "answer": "2- H2O" },
+              { "id": 3, "question": "3- Qual teu nome?", "answer": "3- Greg" },
+              { "id": 4, "question": "4- Quantos X pra trocar 1 lâmpada", "answer": "4- depende" },
+              { "id": 5, "question": "5- Era ____ vez", "answer": "5- 'uma'" },
+              { "id": 6, "question": "6- 2x2", "answer": "6- 4" }
+            ]
+          } 
+        ]        
+      } 
     ]
   }  
 ]
