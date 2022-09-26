@@ -25,10 +25,13 @@ export default function QuestionSide( { text, isFront = true }: LadoProps){
         align='center'
       >
         <Text
+          fontSize='17px'
           textAlign='justify'
-          lineHeight='200%'
+          lineHeight='180%'
           color='gray.800'
-        >{text}</Text>
+        >
+          {text}
+        </Text>
         <a color='black.500' onClick={HandleTurnCard}>
           <TextButton color='transparent' text='Virar'/>          
         </a>

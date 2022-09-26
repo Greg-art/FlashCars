@@ -1,9 +1,7 @@
-import { Box, Flex, Select, Text } from "@chakra-ui/react";
-import styles from './styles.module.scss'
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiArrowRight, FiChevronDown, FiEdit2, FiPlus } from "react-icons/fi";
 
-import fs from 'fs'
-import { createRef, useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { CardContext } from "../../contexts/CardContext";
 
 type Subject = {
@@ -62,7 +60,7 @@ export default function DropDown({ subjects }:DropDownProps){
 
   return(
     <>
-      <Flex className='DropDown' ref={BoxRef} flexDir='column' gap='10px' >
+      <Flex className='DropDown' ref={BoxRef} flexDir='column' gap='10px' position='relative'>
         <Flex         
           pos='relative'
           w='150px' 

@@ -39,7 +39,7 @@
         "id": 3,
         "title": "Geopolítica",
         "questions": [
-          { "id": 1, "question": "1- Qual o presidente dos EUA?", "answer": "1- Biden" },
+          { "id": 1, "question": "O organizador de uma competição de lançamento de dardos pretende tornar o campeonato mais competitivo. Pelas regras atuais da competição, numa rodada, o jogador lança 3 dardos e pontua caso acerte pelo menos um deles no alvo. O organizador considera que, em média, os jogadores têm, em cada lançamento, 1/2 de probabilidade de acertar um dardo no alvo.", "answer": "Essa pergunta é um texte para textos grandes" },
           { "id": 2, "question": "2- Qual a formula da água?", "answer": "2- H2O" },
           { "id": 3, "question": "3- Qual teu nome?", "answer": "3- Greg" },
           { "id": 4, "question": "4- Quantos X pra trocar 1 lâmpada", "answer": "4- depende" },

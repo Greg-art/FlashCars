@@ -8,6 +8,7 @@ interface TextButtonProps {
 export function TextButton( {color, text}: TextButtonProps ){
   return(
     <Text
+      fontFamily='Noto Sans, sans-serif'
       color='Black'
       p='10px 20px'
       borderRadius='10px'
