@@ -23,11 +23,11 @@ export default function Home(){
   
   return (
     <>
-      <header>
+      <Flex fontFamily='Noto Sans, sans-serif'>
         <CardFilter />
-      </header>
+      </Flex>
 
-      <Flex w='100vw' h='800px' align='center' justify='center'>
+      <Flex w='100vw' h='800px' align='center' justify='center' fontFamily='Noto Serif, serif'>
         { cards && (
           <Card question={cards[cardIndex].question} Answer={cards[cardIndex].answer}/>
         )}
