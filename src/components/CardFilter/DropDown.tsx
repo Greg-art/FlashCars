@@ -3,17 +3,9 @@ import { FiArrowRight, FiChevronDown, FiEdit2, FiPlus } from "react-icons/fi";
 
 import { useContext, useEffect, useRef, useState } from "react";
 import { CardContext } from "../../contexts/CardContext";
+import DropDownItem from "./DropDownItem";
+import { Subject } from ".";
 
-type Subject = {
-  id: number;
-  title: string;
-  questions: {
-      id: number;
-      question: string;
-      answer: string;
-  }[];
-  subjects?: Subject[]
-}
 
 
 interface DropDownProps{
@@ -50,12 +42,9 @@ export default function DropDown({ subjects }:DropDownProps){
   // }, []);
 
   useEffect(() => {
-    // function setContext() {
-      // if que determina se este é o ultimo dropdown
       if(chosenSubject.questions ) {
         HandleSetCards(chosenSubject.questions)
       }
-    // }
   }, [chosenSubject])
 
   return(
@@ -100,56 +89,33 @@ export default function DropDown({ subjects }:DropDownProps){
             pb='5px'
             borderRadius='5px'
           >
-            { subjects.map(subject => (
-              <Flex 
-                key={subject.id} 
-                justify='space-between' 
-                align='center'
-              >
-                <Text 
-                  py='5px' 
-                  pl='10px' 
-                  w='100%'
-                  _hover={{ bg:'gray.600', cursor: 'pointer' }}
-                  onClick={() => handleChooseSubject(subject)}
-                >
-                  {subject.title}
-                </Text>
-                <Flex 
-                  py='8px'
-                  px='10px'
-                  align='center'
-                  _hover={{ bg:'gray.600', cursor: 'pointer' }}
-                >
-                  <FiEdit2 />
-                </Flex>
-              </Flex>
-            ))}
-              <Flex 
-                justify='center' 
-                align='center'
-                _hover={{
-                  bg:'gray.600',
-                  cursor: 'pointer'
-                }}
-              >
-                <Text                 
-                  py='10px' 
-                >
-                  <FiPlus /> 
-                </Text>
-
-              </Flex>          
+          { subjects.map(subject => (            
+            <DropDownItem key={subject.id} handleChooseSubject={handleChooseSubject} subject={subject}/>
+          ))}
+            <Flex 
+              justify='center' 
+              align='center'
+              _hover={{
+                bg:'gray.600',
+                cursor: 'pointer'
+              }}
+            >
+              <Text py='10px'>
+                <FiPlus /> 
+              </Text>
+            </Flex>               
           </Flex>
         } 
 
       </Flex>      
+
       { chosenSubject.subjects &&
         <>
           <FiArrowRight/> 
           <DropDown subjects={chosenSubject.subjects}/>
         </>
       }
+      
     </>
   )
 }

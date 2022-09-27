@@ -13,7 +13,7 @@ export default class Document extends NextDocument {
 
         </Head>
         <body>
-          <title>CUBIK</title>
+          <title>StudyCards</title>
           {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
           <Main />
           <NextScript />

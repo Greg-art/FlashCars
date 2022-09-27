@@ -30,6 +30,7 @@ export default function AnswerSide( { text, isFront = true }: LadoProps){
         align='center'
       >
         <Text
+          fontSize='17px'
           textAlign='justify'
           lineHeight='200%'
           color='gray.800'

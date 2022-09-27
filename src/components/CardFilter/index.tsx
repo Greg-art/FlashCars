@@ -4,6 +4,18 @@ import DropDown from "./DropDown";
 import subjects from '../../../subjects.json'
 import { Stack, Text } from "@chakra-ui/react";
 
+export type Subject = {
+  id: number;
+  title: string;
+  questions: {
+      id: number;
+      question: string;
+      answer: string;
+  }[];
+  subjects?: Subject[]
+}
+
+
 export function CardFilter() {
 
   return(

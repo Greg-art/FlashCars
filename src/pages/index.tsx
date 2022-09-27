@@ -1,5 +1,5 @@
 
-import { Flex,  } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Card from "../components/Card";
 import { useContext, useEffect,  } from "react";
 import { CardContext } from "../contexts/CardContext";
@@ -23,7 +23,7 @@ export default function Home(){
   
   return (
     <>
-      <Flex fontFamily='Noto Sans, sans-serif'>
+      <Flex fontFamily='Noto Sans, sans-serif' >
         <CardFilter />
       </Flex>
 

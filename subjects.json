@@ -15,7 +15,7 @@
     "id": 2,
     "title": "História",
     "questions": [
-      { "id": 1, "question": "1- Qual preço da batata?", "answer": "1- R$ 27,50" },
+      { "id": 1, "question": "1- uma pegunta aleatoria?", "answer": "1- R$ 27,50" },
       { "id": 2, "question": "2- Qual a formula da água?", "answer": "2- H2O" },
       { "id": 3, "question": "3- Qual teu nome?", "answer": "3- Greg" },
       { "id": 4, "question": "4- Quantos X pra trocar 1 lâmpada", "answer": "4- depende" },
@@ -27,7 +27,7 @@
     "id": 3,
     "title": "Geografia",
     "questions": [
-      { "id": 1, "question": "1- Qual preço da batata?", "answer": "1- R$ 27,50" },
+      { "id": 1, "question": "1- O que da pra fazer com uma banana que não da pra fazer com uma bolacha?", "answer": "1- R$ 27,50" },
       { "id": 2, "question": "2- Qual a formula da água?", "answer": "2- H2O" },
       { "id": 3, "question": "3- Qual teu nome?", "answer": "3- Greg" },
       { "id": 4, "question": "4- Quantos X pra trocar 1 lâmpada", "answer": "4- depende" },
